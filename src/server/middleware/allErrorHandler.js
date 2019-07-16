@@ -1,6 +1,6 @@
 'use strict';
 
-import { BAD_REQUEST, CONFLICT, NOT_FOUND, GENERIC_ERROR } from '../helpers';
+import { BAD_REQUEST, CONFLICT, NOT_FOUND, GENERIC_ERROR } from '../util';
 
 /**
  * Handle bad request error
