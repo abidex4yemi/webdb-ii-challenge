@@ -1,5 +1,5 @@
 import Joi from '@hapi/joi';
-import { joiValidate } from '../helpers';
+import { joiValidate } from '../util';
 
 /**
  * Car validation schema
