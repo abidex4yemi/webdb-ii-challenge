@@ -1,5 +1,5 @@
 import express from 'express';
-import { getCars, getCarById, deleteCar, addCar } from '../controllers/cars';
+import { getCars, getCarById, deleteCar, addCar, updateCar } from '../controllers/cars';
 import { validateCarParam, validateCarBody } from '../middleware';
 
 const router = express.Router();
@@ -14,6 +14,7 @@ router
 router
 	.route('/cars/:id')
 	.get(getCarById)
-	.delete(deleteCar);
+	.delete(deleteCar)
+	.put(validateCarBody, updateCar);
 
 export { router as carRouter };
