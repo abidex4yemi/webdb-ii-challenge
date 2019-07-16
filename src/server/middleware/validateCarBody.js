@@ -24,6 +24,6 @@ const carSchema = Joi.object().keys({
 /**
  * Validate car body against defined schema
  */
-export const validateAccountBody = (req, res, next) => {
+export const validateCarBody = (req, res, next) => {
 	joiValidate(req, res, next, carSchema);
 };

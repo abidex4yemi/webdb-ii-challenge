@@ -1,3 +1,3 @@
 export { allErrorHandler } from './allErrorHandler';
-export { validateAccountBody } from './validateCarBody';
+export { validateCarBody } from './validateCarBody';
 export { validateCarParam } from './validateCarParam';

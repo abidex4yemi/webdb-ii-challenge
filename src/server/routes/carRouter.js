@@ -1,12 +1,15 @@
 import express from 'express';
-import { getCars, getCarById, deleteCar } from '../controllers/cars';
-import { validateCarParam, validateAccountBody } from '../middleware';
+import { getCars, getCarById, deleteCar, addCar } from '../controllers/cars';
+import { validateCarParam, validateCarBody } from '../middleware';
 
 const router = express.Router();
 
 router.param('id', validateCarParam);
 
-router.route('/cars').get(getCars);
+router
+	.route('/cars')
+	.get(getCars)
+	.post(validateCarBody, addCar);
 
 router
 	.route('/cars/:id')
