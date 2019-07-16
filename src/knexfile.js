@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 // Get root directory absolute path
 const rootDirectory = path.parse(__dirname).dir;
