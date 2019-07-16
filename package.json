@@ -2,9 +2,18 @@
   "name": "webdb-ii-challenge",
   "version": "1.0.0",
   "description": "Web DB II Module Challenge",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "db:migrate": "npx knex migrate:latest --knexfile=./src/knexfile.js",
+    "db:seed": "npx knex seed:run  --knexfile=./src/knexfile.js",
+    "start": "npm run prod",
+    "server": "babel-node ./src/server/start.js",
+    "server:prod": "node ./dist/server/start.js",
+    "dev": "NODE_ENV=development npm-run-all server",
+    "clean": "rimraf dist",
+    "build": "babel ./src --out-dir dist",
+    "prod": "NODE_ENV=production npm-run-all clean build server:prod",
+    "watch": "nodemon"
   },
   "author": "Lambda School",
   "dependencies": {
